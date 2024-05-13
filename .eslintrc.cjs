@@ -154,7 +154,7 @@ module.exports = {
             'error',
             {
                 maxLen: 120,
-                quoteOnNewLine: true,
+                quotesOnNewLine: true,
             },
         ],
     },
