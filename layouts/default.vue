@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen">
+    <div class="flex min-h-screen flex-col">
         <div class="container sticky top-0 z-10 flex items-center gap-16 py-4 backdrop-blur-md">
             <NuxtLink
                 to="/"
@@ -19,20 +19,20 @@
             <NavigationMenu>
                 <NavigationMenuList>
                     <NavigationMenuItem>
-                        <NavigationMenuLink
+                        <NuxtLink
                             href="/about-me"
                             :class="navigationMenuTriggerStyle()"
                         >
                             About Me
-                        </NavigationMenuLink>
+                        </NuxtLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink
+                        <NuxtLink
                             href="/showcase"
                             :class="navigationMenuTriggerStyle()"
                         >
                             Showcase
-                        </NavigationMenuLink>
+                        </NuxtLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <NavigationMenuTrigger>
@@ -75,10 +75,15 @@
         </div>
         <slot />
         <Toaster />
+        <div class="container mt-auto py-4 text-center">
+            &copy; Philipp Glaum {{ new Date().getFullYear() }}
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { NavigationMenuItem, } from 'radix-vue'
+
 import { navigationMenuTriggerStyle, } from '~/components/ui/navigation-menu'
 
 
