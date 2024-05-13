@@ -11,12 +11,8 @@
                     uppercase
                     text-muted-foreground"
             >
-                <BookCopy class="size-6" />
-                Books
+                Philipp Glaum
             </NuxtLink>
-            <div class="flex gap-4">
-                <Avatar v-if="user" />
-            </div>
         </div>
         <slot />
         <Toaster />
@@ -24,7 +20,4 @@
 </template>
 
 <script setup lang="ts">
-import { BookCopy, } from 'lucide-vue-next'
-
-const user = useSupabaseUser()
 </script>

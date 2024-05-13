@@ -34,7 +34,6 @@ export default defineNuxtConfig({
         payloadExtraction: false,
     },
     modules: [
-        '@nuxtjs/supabase',
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
         'shadcn-nuxt',
@@ -42,26 +41,8 @@ export default defineNuxtConfig({
     pinia: {
         storesDirs: [ './stores/**', ],
     },
-    runtimeConfig: {
-        public: {
-            googleApiKey: '',
-        },
-    },
     shadcn: {
         prefix: '',
         componentDir: './components/ui',
-    },
-    supabase: {
-        redirectOptions: {
-            login: '/login',
-            callback: '/confirm',
-            exclude: [
-                '/login',
-                '/register',
-                '/forgot-password',
-                '/reset-password',
-            ],
-            cookieRedirect: true,
-        },
     },
 })
