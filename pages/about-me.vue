@@ -10,14 +10,47 @@
                     size="24"
                 />.
                 <br>
-                I have a Bachelor & Master Degree in electrical engineering,
-                but my passion has been programming since I was 15.
+                I have a Bachelor & Master Degree in IT & electrical engineering,
+                programming has been my passion since I was 15.
                 <br>
                 In my dual study I got lots of experience by developing automation,
                 integration & application for medical production lines.
                 <br>
-                Now I mostly work on mobile apps & web applications.
+                Currently I mostly work on mobile apps & web applications.
             </P>
+
+            <div class="mt-6 flex gap-x-4 gap-y-2">
+                <Button
+                    variant="outline"
+                    as-child
+                >
+                    <NuxtLink
+                        href="https://github.com/pglaum"
+                        target="_blank"
+                    >
+                        <Icon
+                            name="mdi:github"
+                            size="20"
+                        />
+                        GitHub
+                    </NuxtLink>
+                </Button>
+                <Button
+                    variant="outline"
+                    as-child
+                >
+                    <NuxtLink
+                        href="https://git.sr.ht/~pglaum"
+                        target="_blank"
+                    >
+                        <Icon
+                            name="simple-icons:sourcehut"
+                            size="20"
+                        />
+                        SourceHut
+                    </NuxtLink>
+                </Button>
+            </div>
         </div>
         <div>
             <H3>Languages & Frameworks</H3>
@@ -44,9 +77,10 @@
             <H3>Jobs</H3>
 
             <Ul>
-                <Li>2023-now: Software Developer @ SiNetCon</Li>
-                <Li>2021-2022: Project Manager @ Fresenius Kabi Department of Development</Li>
-                <Li>2017-2020: Project Engineer @ Fresenius Kabi Department of Development</Li>
+                <Li>06/2024 - now: Team Lead Software Development @ SiNetCon</Li>
+                <Li>01/2023 - 05/2024: Software Developer @ SiNetCon</Li>
+                <Li>01/2021 - 12/2022: Junior Manager @ Fresenius Kabi, Technology</Li>
+                <Li>08/2019 - 12/2020: Project Engineer @ Fresenius Kabi, Technology</Li>
             </Ul>
         </div>
 
@@ -54,8 +88,8 @@
             <H3>Education</H3>
 
             <Ul>
-                <Li>2020-2022: M. Eng. Systems Engineering @ THM Wetzlar</Li>
-                <Li>2017-2020: B. Eng. Technische Informatik @ THM Wetzlar</Li>
+                <Li>10/2019 - 07/2021: M. Eng. Systems Engineering @ THM Wetzlar</Li>
+                <Li>08/2016 - 07/2019: B. Eng. Technische Informatik @ THM Wetzlar</Li>
             </Ul>
         </div>
     </div>
@@ -95,6 +129,8 @@ const experiencedIn = ref([
     [ 'mdi:console', 'Terminal/command line usage', ],
     [ 'devicon-plain:raspberrypi', 'Raspberry Pi', ],
     [ 'devicon:flask', 'Python Flask', ],
+    [ 'mdi:nuxt', 'Nuxt', ],
+    [ 'simple-icons:autohotkey', 'AutoHotKey', ],
 ])
 
 const years = computed(() => {

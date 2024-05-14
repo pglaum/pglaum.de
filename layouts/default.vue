@@ -167,7 +167,7 @@
         <slot />
         <Toaster />
         <div class="container mt-auto py-4 text-center">
-            &copy; Philipp Glaum {{ new Date().getFullYear() }}
+            &copy; {{ new Date().getFullYear() }} Philipp Glaum
         </div>
     </div>
 </template>
