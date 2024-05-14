@@ -8,12 +8,10 @@
 
 <script setup lang="ts">
 useSeoMeta({
-    title: 'Books',
-    ogTitle: 'Books',
-    description: 'Track your books',
-    ogDescription: 'Track your books',
-    ogImage: '/favicon.svg',
-    twitterCard: 'summary_large_image',
+    title: 'Philipp Glaum',
+    ogTitle: 'Philipp Glaum',
+    description: 'Hi, I am Philipp',
+    ogDescription: 'Hi, I am Philipp',
 })
 </script>
 

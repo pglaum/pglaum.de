@@ -72,7 +72,7 @@ const experiencedIn = ref([
     [ 'mdi:vuejs', 'Vue.js', ],
     [ 'mdi:react', 'React', ],
     [ 'mdi:language-python', 'Python', ],
-    [ 'mdi:linux', 'Linux & Server stuff', ],
+    [ 'mdi:linux', 'Linux: Server setup & maintenance', ],
     [ 'mdi:language-java', 'Java', ],
     [ 'mdi:git', 'Git', ],
     [ 'mdi:apple-ios', 'Flutter (iOS)', ],
@@ -86,6 +86,13 @@ const experiencedIn = ref([
     [ 'mdi:language-html5', 'HTML5', ],
     [ 'mdi:language-c', 'C', ],
     [ 'mdi:language-cpp', 'C++', ],
+    [ 'devicon-plain:postgresql', 'PostgreSQL', ],
+    [ 'devicon-plain:mysql', 'MySQL', ],
+    [ 'devicon-plain:sqlite', 'SQLite', ],
+    [ 'mdi:firebase', 'Firebase', ],
+    [ 'devicon-plain:supabase', 'Supabase', ],
+    [ 'mdi:wordpress', 'Wordpress: Setup, Management & Plugin development', ],
+    [ 'mdi:console', 'Terminal/command line usage', ],
 ])
 
 const years = computed(() => {
