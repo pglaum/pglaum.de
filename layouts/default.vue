@@ -1,6 +1,6 @@
 <template>
     <div class="flex min-h-screen flex-col">
-        <div class="container sticky top-0 z-10 bg-background">
+        <div class="sticky top-0 z-10 bg-background">
             <div class="container flex items-center gap-8 py-4 md:max-w-3xl">
                 <Sheet v-model:open="sheetOpen">
                     <SheetTrigger as-child>
@@ -98,6 +98,7 @@
                         </nav>
                     </SheetContent>
                 </Sheet>
+
                 <NuxtLink
                     to="/"
                     class="
@@ -110,6 +111,7 @@
                         text-muted-foreground
                         "
                 >
+                    <Icon name="iconoir:hexagon-dice" />
                     Philipp Glaum
                 </NuxtLink>
 

@@ -93,6 +93,8 @@ const experiencedIn = ref([
     [ 'devicon-plain:supabase', 'Supabase', ],
     [ 'mdi:wordpress', 'Wordpress: Setup, Management & Plugin development', ],
     [ 'mdi:console', 'Terminal/command line usage', ],
+    [ 'devicon-plain:raspberrypi', 'Raspberry Pi', ],
+    [ 'devicon:flask', 'Python Flask', ],
 ])
 
 const years = computed(() => {
