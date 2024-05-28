@@ -55,7 +55,54 @@
         <div>
             <H3>Languages & Frameworks</H3>
 
-            <div class="mt-6 flex flex-wrap gap-2">
+            <button
+                class="
+                    mt-2
+                    inline-flex
+                    items-center
+                    gap-2
+                    text-primary
+                    underline
+                    underline-offset-4
+                    hover:no-underline
+                    "
+                @click="showAsList = !showAsList"
+            >
+                <Icon
+                    v-if="showAsList"
+                    name="lucide:layout-grid"
+                    size="16"
+                />
+                <Icon
+                    v-else
+                    name="lucide:list"
+                    size="16"
+                />
+                {{ showAsList ? 'Show icons' : 'Show as list' }}
+            </button>
+
+            <div
+                v-if="showAsList"
+                class="mt-6 divide-y"
+            >
+                <div
+                    v-for="xp, index in sortedExperiences"
+                    :key="index"
+                    class="flex flex-wrap items-center justify-start gap-4 py-2"
+                >
+                    <Icon
+                        :name="xp[0]"
+                        size="20"
+                    />
+                    <div class="font-medium">
+                        {{ xp[1] }}
+                    </div>
+                </div>
+            </div>
+            <div
+                v-else
+                class="mt-6 flex flex-wrap gap-2"
+            >
                 <Popover
                     v-for="xp, index in experiencedIn"
                     :key="index"
@@ -98,6 +145,8 @@
 <script setup lang="ts">
 import { getLocalTimeZone, today, } from '@internationalized/date'
 
+const showAsList = ref(false)
+
 const experiencedIn = ref([
     [ 'mdi:symfony', 'Symfony (PHP Framework)', ],
     [ 'mdi:tailwind', 'Tailwind CSS', ],
@@ -120,6 +169,7 @@ const experiencedIn = ref([
     [ 'mdi:language-html5', 'HTML5', ],
     [ 'mdi:language-c', 'C', ],
     [ 'mdi:language-cpp', 'C++', ],
+    [ 'simple-icons:dart', 'Dart (Flutter development)', ],
     [ 'devicon-plain:postgresql', 'PostgreSQL', ],
     [ 'devicon-plain:mysql', 'MySQL', ],
     [ 'devicon-plain:sqlite', 'SQLite', ],
@@ -131,11 +181,16 @@ const experiencedIn = ref([
     [ 'devicon:flask', 'Python Flask', ],
     [ 'mdi:nuxt', 'Nuxt', ],
     [ 'simple-icons:autohotkey', 'AutoHotKey', ],
+    [ 'devicon-plain:flutter', 'Flutter cross-platform development', ],
 ])
 
 const years = computed(() => {
     const age = today(getLocalTimeZone()).subtract({ years: 1998, months: 12, days: 7, })
     return age.year
+})
+
+const sortedExperiences = computed(() => {
+    return experiencedIn.value.toSorted((a, b) => a[1].localeCompare(b[1]))
 })
 
 useHead({
