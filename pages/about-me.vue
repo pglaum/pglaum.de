@@ -19,7 +19,7 @@
                 Currently I mostly work on mobile apps & web applications.
             </P>
 
-            <div class="mt-6 flex gap-x-4 gap-y-2">
+            <div class="mt-6 flex flex-wrap gap-x-4 gap-y-2">
                 <Button
                     variant="outline"
                     as-child
@@ -88,35 +88,53 @@
                 <div
                     v-for="xp, index in sortedExperiences"
                     :key="index"
-                    class="flex flex-wrap items-center justify-start gap-4 py-2"
+                    class="flex flex-col gap-4 py-2"
                 >
-                    <Icon
-                        :name="xp[0]"
-                        size="20"
-                    />
-                    <div class="font-medium">
-                        {{ xp[1] }}
+                    <div class="flex items-center justify-start gap-4">
+                        <Icon
+                            :name="xp[0]"
+                            size="20"
+                        />
+                        <div class="font-medium">
+                            {{ xp[1] }}
+                        </div>
+                    </div>
+                    <div v-if="xp.length > 2">
+                        {{ xp[2] }}
                     </div>
                 </div>
             </div>
             <div
                 v-else
-                class="mt-6 flex flex-wrap gap-2"
+                class="flex flex-col gap-4"
             >
-                <Popover
-                    v-for="xp, index in experiencedIn"
-                    :key="index"
+                <div
+                    class="mt-6 flex flex-wrap gap-2"
                 >
-                    <PopoverTrigger class="cursor-pointer rounded-lg p-2 hover:bg-muted/50">
-                        <Icon
-                            :name="xp[0]"
-                            size="36"
-                        />
-                    </PopoverTrigger>
-                    <PopoverContent side="top">
-                        {{ xp[1] }}
-                    </PopoverContent>
-                </Popover>
+                    <Popover
+                        v-for="xp, index in experiencedIn"
+                        :key="index"
+                    >
+                        <PopoverTrigger class="cursor-pointer rounded-lg p-2 hover:bg-muted/50">
+                            <Icon
+                                :name="xp[0]"
+                                size="36"
+                            />
+                        </PopoverTrigger>
+                        <PopoverContent side="top">
+                            {{ xp[1] }}
+                        </PopoverContent>
+                    </Popover>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Icon
+                        name="lucide:info"
+                        size="16"
+                    />
+                    <em>
+                        Click on an icon to see more information.
+                    </em>
+                </div>
             </div>
         </div>
 
