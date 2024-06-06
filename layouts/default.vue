@@ -109,9 +109,14 @@
                         font-medium
                         uppercase
                         text-muted-foreground
+                        transition-colors
+                        hover:text-foreground
                         "
                 >
-                    <Icon name="iconoir:hexagon-dice" />
+                    <img
+                        src="/favicon.svg"
+                        class="size-6"
+                    >
                     Philipp Glaum
                 </NuxtLink>
 
