@@ -14,9 +14,12 @@ RUN yarn build
 
 ENTRYPOINT [ "node", ".output/server/index.mjs" ]
 
-#RUN yarn generate
-#
-#FROM caddy:alpine
-#
-#COPY .docker/Caddyfile /etc/caddy/Caddyfile
-#COPY --from=builder /nuxt/.output/public /nuxt
+FROM node:22-alpine as runner
+
+RUN mkdir /nuxt-app
+WORKDIR /nuxt-app
+
+COPY --from=builder /nuxt/.output /nuxt-app
+
+
+ENTRYPOINT [ "node", "server/index.mjs" ]
