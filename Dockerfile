@@ -12,8 +12,6 @@ RUN yarn install
 COPY . .
 RUN yarn build
 
-ENTRYPOINT [ "node", ".output/server/index.mjs" ]
-
 FROM node:22-alpine as runner
 
 RUN mkdir /nuxt-app
